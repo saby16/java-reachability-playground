@@ -23,11 +23,11 @@ steps:
 - task: WhiteSource@21
   inputs:
     cwd: '$(System.DefaultWorkingDirectory)'
-
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'Azure pipeline'
     organization: 'saby16'
-    scannerMode: 'Other'
+    scannerMode: 'CLI'
+    configMode: 'file'
 - task: SonarCloudAnalyze@1
 
