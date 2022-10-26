@@ -24,10 +24,10 @@ steps:
   inputs:
     cwd: '$(System.DefaultWorkingDirectory)'
 
-include:
-  - template: Security/Secret-Detection.gitlab-ci.yml
-
-secret_detection:
-  variables:
-    SECRET_DETECTION_HISTORIC_SCAN: "true"
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'Azure pipeline'
+    organization: 'saby16'
+    scannerMode: 'Other'
+- task: SonarCloudAnalyze@1
 
