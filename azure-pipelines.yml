@@ -31,8 +31,6 @@ steps:
     configMode: 'file'
 - task: SonarCloudAnalyze@1
 
-trigger:
-  - master
 
 jobs:
   - job: ubuntu
