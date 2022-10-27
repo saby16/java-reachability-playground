@@ -31,19 +31,17 @@ steps:
     configMode: 'file'
 - task: SonarCloudAnalyze@1
 
-
-jobs:
-  - job: ubuntu
-    displayName: "detect-secrets on Ubuntu Linux agent"
-    pool:
-      vmImage: ubuntu-latest
-    steps:
-      - task: UsePythonVersion@0
-        displayName: "Set Python 3 as default"
-        inputs:
-          versionSpec: "3"
-          addToPath: true
-          architecture: "x64"
+- task: UsePythonVersion@0
+  displayName: "Set Python 3 as default"
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3'
+    addToPath: true
+    architecture: 'x64'
+  inputs:
+  versionSpec: "3"
+  addToPath: true
+  architecture: "x64"
 
       - bash: pip install detect-secrets
         displayName: "Install detect-secrets using pip"
